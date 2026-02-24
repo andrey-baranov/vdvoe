@@ -1,0 +1,772 @@
+/*Обнуление*/
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*, *:before, *:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus, :active{outline: none;}
+a:focus, a:active{outline: none;}
+
+nav,footer,header,aside{display: block;}
+
+html, body{
+	height: 100%;
+	width: 100%;
+	font-style: 100%;
+	line-height: 1;
+	font-style: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+
+	overflow-x: hidden;	
+	scroll-behavior: smooth;
+}
+
+input, button, textarea{font-family: inherit;}
+
+input::-ms-clear{display:none;}
+button{cursor: pointer;}
+button::-moz-focus-inner{padding: 0;border: 0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style-type: none;}
+img{vertical-align: top;}
+
+h1,h2, h3, h4, h5, h6{font-style: inherit; font-weight: 400;}
+
+/*Общие*/
+
+.wrapper {
+	 max-width: 1200px;
+    margin: 0px auto;
+	 padding-left: 20px;
+    padding-right: 20px;
+    background-color: F1F1F1;
+}
+
+@font-face {
+font-family: 'bounded';  
+src: url('../fonts/Bounded-Variable.woff2') format("woff2"); 
+src: url('../fonts/Bounded-Variable.woff2') format("woff"); 
+font-style: normal; 
+font-weight: normal;
+ }
+
+h1 {
+   font-family: bounded;
+   font-size: 80px;
+	line-height: 110%
+   color: #000000;     
+}
+
+h2 {
+   font-family: bounded;
+   font-size: 80px;
+   color: #000000;    
+}
+
+h3 {
+   font-family: bounded;
+   font-size: 32px;
+	color: #000000; 
+	margin-bottom: 14px;   
+}
+
+h4 {
+   font-family: bounded;
+   font-size: 32px;
+	color: #000000; 
+	margin-top: 20px;	
+	line-height: 140%;  
+}
+
+p {
+   font-family: inter;
+   font-size: 18px;
+	line-height: 140%;
+	font-weight: 300;
+}
+
+a {
+	position: relative;
+	cursor: pointer;
+	line-height: 1.5; /*задаём высоту строки*/
+	text-decoration: none; /*убираем подчёркивание*/
+
+}
+a:after {
+	display: block;
+	position: absolute;
+	left: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
+	width: 0;/*задаём длинну линии до наведения курсора*/
+	height: 1px; /*задаём ширину линии*/
+	background-color: currentColor; /*задаём цвет линии*/
+	content: "";
+	transition: width 0.3s ease-out; /*задаём время анимации*/
+}
+
+a:hover:after,
+a:focus:after {
+	width: 100%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+}
+
+
+/*for burger*/
+.open {
+   display: flex !important;
+}
+
+
+/* Lines */
+.line,
+.line-white {
+	height: 1px;
+	border: none;
+	margin: 12px 0 60px 0;
+
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: transform 1s ease;
+}
+
+/* Line Colors */
+.line {
+	background-color: #000;
+}
+
+.line-white {
+	background-color: #fff;
+}
+
+/* Lines Active */
+.line.animate,
+.line-white.animate {
+	transform: scaleX(1);
+}
+
+
+
+/*Меню*/
+
+.header {
+}
+.menu {
+	display: flex;
+	height: 120px;
+   justify-content: space-between;
+	align-items: center;
+	margin-bottom: 120px;
+}
+.logo {
+	color: #0E48DD;
+	position: relative;
+	z-index: 100;
+}
+.nav {	
+}
+.nav__list {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 35px;
+	font-family: Inter;
+   font-weight: 400;
+   font-size: 18px;
+   color: #000000;
+	text-decoration: none;
+}
+.nav__item {	
+}
+.nav__link {
+	text-decoration: none;
+	color: #000000;
+}
+.burger{
+	display: none;
+	position: relative;
+	z-index: 50;
+	align-items: center;
+	justify-content: flex-end;
+	width: 30px;
+	height: 18px;
+}
+
+@media (max-width: 760px) {
+
+	.burger { 
+		display: flex 
+	}
+
+	.header.menu-open .logo {
+		color: #ffffff;
+	}
+
+	.nav{
+		display: none;
+		flex-direction: column;
+		justify-content: center;
+		position: fixed;
+		height: 100%;
+		width: 100%;
+		top: 0; bottom: 0; left: 0; right: 0;
+		z-index: 50;
+		overflow-y: auto;        
+		background-color: rgb(0, 0, 0);
+		animation: burgerAnimation 0.4s;
+	}
+	.nav__list{
+		flex-direction: column;
+		align-items: flex-start;
+		padding-left: 20px;
+	}
+	.nav__link{
+		color: #ffffff;
+		font-size: 40px;
+	}
+	.burger span{
+		height: 2px;
+		width: 80%;
+		transform: scale(1);
+		background-color: #000000;
+	}
+	.burger::before, .burger::after{
+		content: '';
+		position: absolute;
+		height: 2px;
+		width: 100%;
+		background-color: #000000;
+		transition: all 0.3s ease 0s;
+	}
+	.burger::before { top: 0 }
+	.burger::after { bottom: 0 }
+
+	/* Добавляем класс active для анимации иконки бургера */
+	.burger.active span { 
+		transform: scale(0);
+		background-color: #fff;
+	}
+	.burger.active::before{
+		top: 50%;
+		transform: rotate(-45deg) translate(0, -50%);
+		background-color: #fff;
+	}
+	.burger.active::after{
+		bottom: 50%;
+		transform: rotate(45deg) translate(0, 50%);
+		background-color: #fff;
+	}
+	@keyframes burgerAnimation {
+		from {opacity: 0}
+		to {opacity: 1}
+		}
+}
+
+
+
+
+
+
+/*Welcome*/
+
+.welcome {
+	margin-bottom: 120px; 
+}
+.welcome__title {
+	display: flex;
+	width: 100%;
+	margin-bottom: 40px;
+}
+.welcome__description {
+	display: flex;
+	padding-left: 33%;
+	margin-bottom: 40px;
+}
+.description__text {
+	font-family: Inter;
+	font-size: 28px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 140%;
+}
+.welcome__banner {
+	width: 100vw; /* Ширина равна 100% ширины области просмотра */
+   position: relative;
+   left: 50%;
+   transform: translateX(-50%);	
+}
+
+
+
+@media (max-width: 480px) {
+
+h1 {
+   font-family: bounded;
+   font-size: 40px;
+	line-height: 110%
+   color: #000000;     
+}
+
+h2 {
+   font-family: bounded;
+   font-size: 40px;
+   color: #000000;    
+}
+
+h3 {
+   font-family: bounded;
+   font-size: 26px;
+	color: #000000; 
+	margin-bottom: 14px;   
+}
+
+h4 {
+   font-family: bounded;
+   font-size: 26px;
+	color: #000000; 
+	margin-top: 20px;	
+	line-height: 140%;  
+}
+
+p {
+   font-family: inter;
+   font-size: 16px;
+	line-height: 140%;
+	font-weight: 300;
+}
+
+.welcome {
+	margin-bottom: 120px; 
+}
+.welcome__title {
+	display: flex;
+	width: 100%;
+	margin-bottom: 40px;
+}
+
+.welcome__description {
+	display: flex;
+	padding-left: 0%;
+	margin-bottom: 40px;
+}
+.description__text {
+	font-family: Inter;
+	font-size: 22px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 140%;
+}
+
+}
+
+
+
+
+
+
+
+/*Услуги*/
+
+.services {
+	margin-bottom: 120px;
+}
+
+.services__items {
+	display: flex;	
+	padding-left: 33%;
+	gap: 30px;
+	row-gap: 60px;
+	flex-wrap: wrap;
+}
+.services__branding {
+  flex-basis: 45%; /* Первые две карточки занимают 50% */
+}
+.services__web {
+	flex-basis: 45%;
+}
+.services__design {
+	flex-basis: 45%;
+}
+.services__video {
+	flex-basis: 45%;
+}
+
+
+@media (max-width: 480px){
+	.services__items {
+	display: flex;	
+	padding-left: 0%;
+	gap: 30px;
+	row-gap: 60px;
+	flex-wrap: wrap;
+	}
+	.services__branding {
+	flex-basis: 100%; /* Первые две карточки занимают 50% */
+	}
+	.services__web {
+		flex-basis: 100%;
+	}
+	.services__design {
+		flex-basis: 100%;
+	}
+	.services__video {
+		flex-basis: 100%;
+	}
+}
+
+
+
+
+/*Работы*/
+
+.works {	
+	margin-bottom: 120px;
+}
+.line {
+}
+.works__items {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5%;	
+	row-gap: 120px;
+}
+.works__preview {
+	border-radius: 25px;
+	width: 100%		
+}
+.works__item1 {
+	width: 100%	
+}
+.works__item2 {
+	flex-basis: 48%;
+}
+.works__item3 {
+	flex-basis: 47%;
+}
+.works__item4 {
+	width: 100%
+}
+.works__item5 {
+	flex-basis: 40%
+}
+.works__item6 {
+	flex-basis: 55%
+}
+.works__item7 {	
+	max-width: 70%;
+	flex-shrink: 0;
+}
+.works__item8 {
+	flex-basis: 48%;
+}
+.works__item9 {
+	flex-basis: 47%;
+}
+.works__item10 {
+	width: 100%
+}
+.works__tag {
+	display: inline-block;
+	padding: 5px 10px;    
+   border-radius: 50px;
+   text-align: center;
+	font-family: Inter;
+   font-weight: 400;
+   font-size: 14px;
+   color: #2e2e2e;
+	background-color: rgb(221, 221, 221);
+	margin-top: 12px;
+}
+
+
+@media (max-width: 480px){
+	.works {	
+	margin-bottom: 120px;
+}
+
+.works__items {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5%;	
+	row-gap: 60px;
+}
+.works__preview {
+	border-radius: 20px;
+	width: 100%		
+}
+.works__item1 {
+	flex-basis: 100%;	
+}
+.works__item2 {
+	flex-basis: 100%;
+}
+.works__item3 {
+	flex-basis: 100%;
+}
+.works__item4 {
+	flex-basis: 100%
+}
+.works__item5 {
+	flex-basis: 100%
+}
+.works__item6 {
+	flex-basis: 100%
+}
+.works__item7 {	
+	max-width: 100%;	
+}
+.works__item8 {
+	flex-basis: 100%;
+}
+.works__item9 {
+	flex-basis: 100%;
+}
+.works__item10 {
+	width: 100%
+}
+.works__tag {
+	display: inline-block;
+	padding: 5px 10px;    
+   border-radius: 50px;
+   text-align: center;
+	font-family: Inter;
+   font-weight: 400;
+   font-size: 14px;
+   color: #2e2e2e;
+	background-color: rgb(221, 221, 221);
+	margin-top: 12px;
+}
+
+}
+
+
+
+
+
+/*O нас*/
+
+.about {
+	margin-bottom: 120px;
+}
+.line {
+}
+.about__content {
+	padding-left: 33%;
+	margin-bottom: 40px;
+}
+.about__description {
+	margin-bottom: 14px;
+}
+.clients__description {
+	margin-top: 60px;
+	margin-bottom: -30px;
+}
+
+@media (max-width: 480px){
+	.about {
+		margin-bottom: 120px;
+	}
+	.line {
+	}
+	.about__content {
+		padding-left: 0%;
+		margin-bottom: 40px;
+	}
+	.about__description {
+		margin-bottom: 14px;
+	}
+	.clients__description {
+		margin-top: 60px;
+		margin-bottom: -30px;
+	}
+	}
+
+
+
+/*Строка*/
+
+@keyframes ticker {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(-50%); }
+}
+.ticker {
+	background: #ffffff;
+	color: #000000;
+	font-family: inter;
+   font-size: 60px;
+	max-width: 100%;
+	overflow: hidden;
+	margin-bottom: -30px;
+}
+.ticker__in {
+	display: flex;
+	width: fit-content;
+	animation: ticker 20s linear infinite;
+	-webkit-transform-style: preserve-3d; /* Фикс возможного глюка с морганием в Сафари */
+}
+.ticker__out {
+	display: flex;
+	width: fit-content;
+	animation: ticker 20s linear infinite reverse;
+	-webkit-transform-style: preserve-3d; /* Фикс возможного глюка с морганием в Сафари */
+}
+	
+.ticker__item {
+	padding: .5em .75em;
+	white-space: nowrap;
+	-webkit-backface-visibility: hidden; /* Фикс возможного глюка с морганием в Сафари */
+}
+
+
+@media (max-width: 480px){
+	@keyframes ticker {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(-50%); }
+}
+.ticker {
+	background: #ffffff;
+	color: #000000;
+	font-family: inter;
+   font-size: 40px;
+	max-width: 100%;
+	overflow: hidden;
+	margin-bottom: -30px;
+}
+
+}
+
+/*Контакты*/
+
+.contacts {
+	background-color: rgb(0, 0, 0);
+	padding-top: 120px;
+	padding-bottom: 120px;
+}
+.h2-white {
+	font-family: bounded;
+   font-size: 80px;
+   color: #ffffff; 
+}
+
+.contacts__content {
+	padding-left: 33%;
+	margin-bottom: 60px;
+}
+.description__text--white {
+	font-family: Inter;
+	font-size: 28px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 140%;
+	color: #ffffff; 
+	margin-bottom: 60px;
+}
+.email-link {
+	font-family: Inter;
+	font-size: 60px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 140%;
+	color: #ffffff;  
+}
+.contacts__links {
+	display: flex;	
+	padding-left: 33%;
+	gap: 30px;
+	row-gap: 60px;
+	flex-wrap: wrap;
+}
+.contacts__socials {
+	flex-basis: 45%; /* Первые две карточки занимают 50% */
+}
+.contacts__messengers {
+	flex-basis: 45%;
+}
+.h3-white {
+	font-family: bounded;
+   font-size: 32px;
+	color: #ffffff; 
+	margin-bottom: 14px;   
+}
+.links {
+}
+.link {
+	font-family: inter;
+   font-size: 18px;
+	line-height: 140%;
+	font-weight: 300;
+	color: #ffffff; 
+}
+.contacts__messengers {
+}
+
+
+@media (max-width: 480px){
+	.contacts {
+	background-color: rgb(0, 0, 0);
+	padding-top: 80px;
+	padding-bottom: 80px;
+}
+.h2-white {
+	font-family: bounded;
+   font-size: 40px;
+   color: #ffffff; 
+}
+
+.contacts__content {
+	padding-left: 0%;
+	margin-bottom: 60px;
+}
+.description__text--white {
+	font-family: Inter;
+	font-size: 28px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 140%;
+	color: #ffffff; 
+	margin-bottom: 60px;
+}
+.email-link {
+	font-family: Inter;
+	font-size: 40px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 140%;
+	color: #ffffff;  
+}
+.contacts__links {
+	display: flex;	
+	padding-left: 0%;
+	gap: 30px;
+	row-gap: 60px;
+	flex-wrap: wrap;
+}
+.contacts__socials {
+	flex-basis: 100%; /* Первые две карточки занимают 50% */
+}
+.contacts__messengers {
+	flex-basis: 100%;
+}
+.h3-white {
+	font-family: bounded;
+   font-size: 32px;
+	color: #ffffff; 
+	margin-bottom: 14px;   
+}
+.links {
+}
+.link {
+	font-family: inter;
+   font-size: 16px;
+	line-height: 140%;
+	font-weight: 300;
+	color: #ffffff; 
+}
+.contacts__messengers {
+}
+}
