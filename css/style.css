@@ -199,6 +199,14 @@ a:focus:after {
 
 @media (max-width: 760px) {
 
+	.menu {
+	display: flex;
+	height: 120px;
+   justify-content: space-between;
+	align-items: center;
+	margin-bottom: 60px;
+}
+
 	.burger { 
 		display: flex 
 	}
