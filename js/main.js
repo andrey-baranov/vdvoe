@@ -29,28 +29,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // Accordion
-const items = document.querySelectorAll(".item");
+const items = document.querySelectorAll('.item');
 
 items.forEach(item => {
-  const btn = item.querySelector(".trigger");
-  const body = item.querySelector(".body");
-  const inner = item.querySelector(".inner");
+  const trigger = item.querySelector('.trigger');
+  const content = item.querySelector('.content');
 
-  btn.addEventListener("click", () => {
+  trigger.addEventListener('click', () => {
+    const isOpen = item.classList.contains('active');
 
-    items.forEach(el => {
-      if (el !== item) {
-        el.classList.remove("active");
-        el.querySelector(".body").style.height = 0;
-      }
+    // закрыть все
+    items.forEach(i => {
+      i.classList.remove('active');
+      i.querySelector('.content').style.height = 0;
     });
 
-    if (!item.classList.contains("active")) {
-      item.classList.add("active");
-      body.style.height = inner.scrollHeight + "px";
-    } else {
-      item.classList.remove("active");
-      body.style.height = 0;
+    if (!isOpen) {
+      item.classList.add('active');
+      content.style.height = content.scrollHeight + 'px';
     }
   });
 });

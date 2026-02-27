@@ -779,99 +779,91 @@ p {
 }
 }
 
-
+/*Аккордеон*/
 
 :root {
-    --icon-size: 20px;
-    --icon-color: #000;
-    --border: #ddd;
-    --speed: 0.35s;
+  --icon-size: 20px;
+  --bar-thickness: 2px;
+  --bar-color: #000;
+  --duration: 0.3s;
 }
 
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #fff;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff;
 }
 
 .accordion {
-    width: 100%;
-    border-top: 1px solid var(--border);
+  width: 100%;
 }
 
 .item {
-    border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid #ddd;
 }
 
 /* Заголовок */
 .trigger {
-    width: 100%;
-    background: none;
-    border: none;
-    padding: 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    font-size: 16px;
+  width: 100%;
+  padding: 16px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Иконка + */
-.trigger .icon {
-    display: block;
-    position: relative;
-    width: var(--icon-size);
-    height: var(--icon-size);
-    transition: transform var(--speed) ease;
+/* Иконка */
+.icon {
+  position: relative;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.trigger .icon::before,
-.trigger .icon::after {
-    content: "";
-    position: absolute;
-    background-color: var(--icon-color);
-    transition: transform var(--speed) ease;
+/* полоски + */
+.bar {
+  position: absolute;
+  background: var(--bar-color);
+  transition: transform var(--duration) ease,
+              opacity var(--duration) ease;
 }
 
 /* горизонтальная */
-.trigger .icon::before {
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    transform: translateY(-50%);
+.horizontal {
+  width: 100%;
+  height: var(--bar-thickness);
 }
 
 /* вертикальная */
-.trigger .icon::after {
-    left: 50%;
-    top: 0;
-    width: 2px;
-    height: 100%;
-    transform: translateX(-50%);
+.vertical {
+  width: var(--bar-thickness);
+  height: 100%;
 }
 
-/* Поворот иконки при активном элементе */
-.item.active .icon {
-    transform: rotate(90deg);
+/* === анимация + → − === */
+.item.active .horizontal {
+  transform: rotate(180deg);
 }
 
-/* Плавное раскрытие */
-.body {
-    overflow: hidden;
-    height: 0;
-    transition: height var(--speed) ease;
+.item.active .vertical {
+  transform: scaleY(0) rotate(80deg);
+  opacity: 0;
 }
 
-.inner {
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: opacity var(--speed) ease, transform var(--speed) ease;
-    padding: 0 16px;
+/* Контент */
+.content {
+  height: 0;
+  overflow: hidden;
+  transition: height var(--duration) ease;
 }
 
-.item.active .inner {
-    opacity: 1;
-    transform: translateY(0);
-    padding: 16px;
+.content p {
+  margin: 0;
+  padding: 0 16px 16px 16px;
 }
