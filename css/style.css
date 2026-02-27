@@ -778,3 +778,100 @@ p {
 .contacts__messengers {
 }
 }
+
+
+
+:root {
+    --icon-size: 20px;
+    --icon-color: #000;
+    --border: #ddd;
+    --speed: 0.35s;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fff;
+}
+
+.accordion {
+    width: 100%;
+    border-top: 1px solid var(--border);
+}
+
+.item {
+    border-bottom: 1px solid var(--border);
+}
+
+/* Заголовок */
+.trigger {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Иконка + */
+.trigger .icon {
+    display: block;
+    position: relative;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    transition: transform var(--speed) ease;
+}
+
+.trigger .icon::before,
+.trigger .icon::after {
+    content: "";
+    position: absolute;
+    background-color: var(--icon-color);
+    transition: transform var(--speed) ease;
+}
+
+/* горизонтальная */
+.trigger .icon::before {
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transform: translateY(-50%);
+}
+
+/* вертикальная */
+.trigger .icon::after {
+    left: 50%;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    transform: translateX(-50%);
+}
+
+/* Поворот иконки при активном элементе */
+.item.active .icon {
+    transform: rotate(90deg);
+}
+
+/* Плавное раскрытие */
+.body {
+    overflow: hidden;
+    height: 0;
+    transition: height var(--speed) ease;
+}
+
+.inner {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity var(--speed) ease, transform var(--speed) ease;
+    padding: 0 16px;
+}
+
+.item.active .inner {
+    opacity: 1;
+    transform: translateY(0);
+    padding: 16px;
+}

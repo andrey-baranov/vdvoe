@@ -28,5 +28,29 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+// Accordion
+const items = document.querySelectorAll(".item");
 
+items.forEach(item => {
+  const btn = item.querySelector(".trigger");
+  const body = item.querySelector(".body");
+  const inner = item.querySelector(".inner");
 
+  btn.addEventListener("click", () => {
+
+    items.forEach(el => {
+      if (el !== item) {
+        el.classList.remove("active");
+        el.querySelector(".body").style.height = 0;
+      }
+    });
+
+    if (!item.classList.contains("active")) {
+      item.classList.add("active");
+      body.style.height = inner.scrollHeight + "px";
+    } else {
+      item.classList.remove("active");
+      body.style.height = 0;
+    }
+  });
+});
