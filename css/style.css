@@ -35,7 +35,7 @@ button{cursor: pointer;}
 button::-moz-focus-inner{padding: 0;border: 0;}
 a, a:visited{text-decoration: none;}
 a:hover{text-decoration: none;}
-ul li {list-style-type: none;}
+ul li {list-style-type: none; font-family: bounded;}
 img{vertical-align: top;}
 
 h1,h2, h3, h4, h5, h6{font-style: inherit; font-weight: 400;}
@@ -318,27 +318,27 @@ a:not(.logo-link):focus:after {
 
 h1 {
    font-family: bounded;
-   font-size: 46px;
+   font-size: 40px;
 	line-height: 110%
    color: #000000;     
 }
 
 h2 {
    font-family: bounded;
-   font-size: 46px;
+   font-size: 35px;
    color: #000000;    
 }
 
 h3 {
    font-family: bounded;
-   font-size: 26px;
+   font-size: 24px;
 	color: #000000; 
 	margin-bottom: 14px;   
 }
 
 h4 {
    font-family: bounded;
-   font-size: 26px;
+   font-size: 24px;
 	color: #000000; 
 	margin-top: 20px;	
 	line-height: 140%;  
