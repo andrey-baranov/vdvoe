@@ -31,6 +31,11 @@ document.addEventListener("DOMContentLoaded", function () {
 // Accordion
 const items = document.querySelectorAll('.item');
 
+/* закрыть всё при загрузке */
+items.forEach(item => {
+  item.querySelector('.content').style.height = 0;
+});
+
 items.forEach(item => {
   const trigger = item.querySelector('.trigger');
   const content = item.querySelector('.content');
@@ -44,6 +49,7 @@ items.forEach(item => {
       i.querySelector('.content').style.height = 0;
     });
 
+    // открыть текущий
     if (!isOpen) {
       item.classList.add('active');
       content.style.height = content.scrollHeight + 'px';
