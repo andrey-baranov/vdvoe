@@ -318,7 +318,7 @@ a:not(.logo-link):focus:after {
 
 h1 {
    font-family: bounded;
-   font-size: 40px;
+   font-size: 35px;
 	line-height: 110%
    color: #000000;     
 }
