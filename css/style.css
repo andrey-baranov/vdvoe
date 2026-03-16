@@ -210,7 +210,7 @@ a:not(.logo-link):focus:after {
 
 	.menu {
 	display: flex;
-	height: 80px;
+	height: 90px;
    justify-content: space-between;
 	align-items: center;
 	margin-bottom: 60px;
@@ -244,7 +244,7 @@ a:not(.logo-link):focus:after {
 	}
 	.nav__link{
 		color: #ffffff;
-		font-size: 40px;
+		font-size: 30px;
 	}
 	.burger span{
 		height: 2px;
