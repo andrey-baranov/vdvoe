@@ -344,7 +344,7 @@ h3 {
 
 h4 {
    font-family: bounded;
-   font-size: 24px;
+   font-size: 20px;
 	color: #000000; 
 	margin-top: 20px;	
 	line-height: 140%;  
@@ -391,7 +391,7 @@ p {
 /*Услуги*/
 
 .services {
-	margin-bottom: 120px;
+	margin-bottom: 120px; 
 }
 
 .services__items {
@@ -478,7 +478,6 @@ p {
 	row-gap: 120px;
 }
 .works__preview {
-	border-radius: 20px;
 	width: 100%		
 }
 .works__item1 {
@@ -533,7 +532,6 @@ p {
 	row-gap: 60px;
 }
 .works__preview {
-	border-radius: 20px;
 	width: 100%		
 }
 [class^="works__item"] {
@@ -566,8 +564,7 @@ p {
 	row-gap: 60px;
 }
 .works__preview {
-	border-radius: 20px;
-	width: 100%		
+		width: 100%		
 }
 [class^="works__item"] {
     flex-basis: 100%;
