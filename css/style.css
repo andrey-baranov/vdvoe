@@ -867,8 +867,22 @@ p {
 
 }
 
+@media (max-width: 900px){
+.content__description {
+	flex-basis: 100%;
+}
+.content__items {
+	flex-basis: 100%;
+}
 
+}
+@media (max-width: 760px){
+.services__list li {
+   font-size: 16px;
+	padding-left: 20px;
 
+}
+}
 
 
 
@@ -963,7 +977,6 @@ body {
   gap: 30px;
   row-gap: 60px;
   flex-wrap: wrap;
-
   height: 0;
   overflow: hidden;
   transition: height var(--duration) var(--easing);
@@ -976,5 +989,16 @@ body {
 }
 
 
-
+@media (max-width: 760px){
+.trigger {
+   font-size: 20px;
+}
+.content p {
+  font-size: 16px;
+}
+.content {
+  display: flex;
+  row-gap: 10px;
+}
+}
 
