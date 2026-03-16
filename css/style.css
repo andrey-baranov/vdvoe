@@ -173,6 +173,8 @@ a:not(.logo-link):focus:after {
 	text-decoration: none;
 }
 .logo {
+	  width: 181px;
+  height: auto;
 	color: #0E48DD;
 	position: relative;
 	z-index: 100;
@@ -284,7 +286,12 @@ a:not(.logo-link):focus:after {
 		}
 }
 
-
+@media (max-width: 480px) {
+	.logo {
+	  width: 120px;
+  height: auto;
+}
+}
 
 
 
@@ -331,15 +338,15 @@ h1 {
 
 h2 {
    font-family: bounded;
-   font-size: 30px;
+   font-size: 32px;
    color: #000000;    
 }
 
 h3 {
    font-family: bounded;
-   font-size: 24px;
+   font-size: 20px;
 	color: #000000; 
-	margin-bottom: 14px;   
+	margin-bottom: 8px;   
 }
 
 h4 {
@@ -373,7 +380,7 @@ p {
 }
 .description__text {
 	font-family: Inter;
-	font-size: 18px;
+	font-size: 20px;
 	font-style: normal;
 	font-weight: 400;
 	line-height: 140%;
@@ -447,7 +454,7 @@ p {
 	display: flex;	
 	padding-left: 0%;
 	gap: 30px;
-	row-gap: 30px;
+	row-gap: 40px;
 	flex-wrap: wrap;
 	}
 	.services__branding {
