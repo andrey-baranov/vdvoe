@@ -382,28 +382,8 @@ p {
 }
 
 
-@media (max-width: 480px) {
-	h3 {
-   font-family: bounded;
-   font-size: 24px;
-	color: #000000; 
-	margin-bottom: 5px;   
-}
-	h4 {
-   font-family: bounded;
-   font-size: 24px;
-	color: #000000; 
-	margin-top: 20px;	
-	line-height: 140%;  
-}
+@media (max-width: 480px) 
 
-p {
-   font-family: inter;
-   font-size: 14px;
-	line-height: 140%;
-	font-weight: 300;
-}
-}
 
 
 
