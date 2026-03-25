@@ -114,6 +114,7 @@ h1 {
 	font-family: bounded;
 	font-size: 90px;
 	line-height: 110% color: #000000;
+	text-transform: uppercase;
 }
 
 h2 {
@@ -132,6 +133,14 @@ h3 {
 h4 {
 	font-family: bounded;
 	font-size: 32px;
+	color: #000000;
+	margin-top: 20px;
+	line-height: 140%;
+}
+
+h5 {
+	font-family: bounded;
+	font-size: 24px;
 	color: #000000;
 	margin-top: 20px;
 	line-height: 140%;
@@ -1178,7 +1187,10 @@ body {
 	}
 }
 
-/* О НАС */
+
+
+
+/*About.html*/
 .team {
 	margin-bottom: 120px;
 }
@@ -1187,25 +1199,193 @@ body {
 .line {
 }
 .team__persons {
+	padding-left: 33%;
 	display: flex;
 	row-gap: 60px;
 	flex-wrap: wrap;
-
+}
+.person__img-wrapper {
+	padding-right: 100px; 
 }
 .person {
-	flex-basis: 33%;	
-
+	flex-basis: 50%;	
 }
 .person__preview {
-	padding-right: 100px;
-	width: 100%;
+	width: 80%;
+	aspect-ratio: 1 / 1;
+	object-fit: cover;
 	border-radius: 50%;
-	box-sizing: border-box; /* важно, чтобы padding не ломал ширину */
+	display: block;
+}
+
+.clients {
+	margin-bottom: 120px;
+}
+.wrapper {
+}
+.line {
+}
+.clients__content {
+	display: flex;
+	margin-bottom: 60px;
+}
+.clients__direction {
+	flex-basis: 33%;
+}
+.clients__list {
+}
+.clients__item {
+	font-family: Inter;
+	font-size: 28px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 140%;
+}
+
+@media (max-width: 760px) {
+	.team {
+	margin-bottom: 80px;
+}
+	.team__persons {
+	padding-left: 0;
+}
+.person {
+	flex-basis: 100%;	
+}
+.clients {
+	margin-bottom: 80px;
+}
+.clients__content {
+	display: block;
+	margin-bottom: 60px;
+}
+.clients__direction {
+	flex-basis: 100;
+	padding-bottom: 10px;
+}
+.clients__item {
+	font-size: 20px;
+}
 }
 
 
+
+/*Contacts.html*/
+.dark-page {
+	background-color: #000000;
+	color: #fff;
+}
+
+.dark-page a {
+	color: #ffffff;
+}
+
+.header {
+}
+.wrapper {
+}
+.menu {
+}
+.logo-link {
+}
+.logo {
+}
+.nav {
+}
+.nav__list {
+}
+.nav__item {
+}
+.nav__link {
+}
+.burger-white {
+}
+.welcome-white {
+}
+.welcome__title {
+}
+.welcome__description {
+}
+
+
+@media (max-width: 760px) {
+.dark-page .burger span,
+.dark-page .burger::before,
+.dark-page .burger::after {
+	background-color: #ffffff;
+}
+}
+
+/*Works.html*/
+
+.works__cards {
 	display: flex;
-	padding-left: 33%;
-	gap: 30px;
-	row-gap: 60px;
 	flex-wrap: wrap;
+	gap: 3%;
+	row-gap: 120px;
+}
+.works__card {
+	flex-basis: 31.33%;
+}
+
+
+
+
+@media (max-width: 760px) {
+	.works__cards {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 5%;
+		row-gap: 60px;
+	}
+
+	.works__preview {
+		width: 100%
+	}
+
+	[class^="works__card"] {
+		flex-basis: 47%;
+	}
+
+	.works__tag {
+		display: inline-block;
+		padding: 5px 10px;
+		border-radius: 50px;
+		text-align: center;
+		font-family: Inter;
+		font-weight: 400;
+		font-size: 14px;
+		color: #2e2e2e;
+		background-color: rgb(221, 221, 221);
+		margin-top: 12px;
+	}
+}
+
+
+@media (max-width: 480px) {
+	.works {
+		margin-bottom: 80px;
+	}
+
+	.works__preview {
+		width: 100%
+	}
+
+	[class^="works__card"] {
+		flex-basis: 100%;
+	}
+
+	.works__tag {
+		display: inline-block;
+		padding: 5px 10px;
+		border-radius: 50px;
+		text-align: center;
+		font-family: Inter;
+		font-weight: 400;
+		font-size: 12px;
+		color: #2e2e2e;
+		background-color: rgb(221, 221, 221);
+		margin-top: 12px;
+	}
+
+}
