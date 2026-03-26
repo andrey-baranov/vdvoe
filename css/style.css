@@ -594,7 +594,7 @@ a:not(.logo-link):focus:after {
 .works__items {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 5%;
+	gap: 3%;
 	row-gap: 120px;
 }
 
@@ -607,15 +607,15 @@ a:not(.logo-link):focus:after {
 }
 
 .works__item2 {
-	flex-basis: 34%;
+	flex-basis: 36%;
 }
 
 .works__item3 {
-	flex-basis: 25%;
+	flex-basis: 27%;
 }
 
 .works__item4 {
-	flex-basis: 25%;
+	flex-basis: 27%;
 }
 
 .works__item5 {
@@ -623,23 +623,23 @@ a:not(.logo-link):focus:after {
 }
 
 .works__item6 {
-	flex-basis: 47%;
+	flex-basis: 48.5%;
 }
 
 .works__item7 {
-	flex-basis: 47%;
+	flex-basis: 48.5%;
 }
 
 .works__item8 {
-	flex-basis: 42%;
+	flex-basis: 40%;
 }
 
 .works__item9 {
-	flex-basis: 24%;
+	flex-basis: 27%;
 }
 
 .works__item10 {
-	flex-basis: 24%;
+	flex-basis: 27%;
 }
 
 .works__tag {
@@ -649,10 +649,14 @@ a:not(.logo-link):focus:after {
 	text-align: center;
 	font-family: Inter;
 	font-weight: 400;
-	font-size: 14px;
-	color: #2e2e2e;
-	background-color: rgb(221, 221, 221);
+	font-size: 12px;
+	color: #000000;
+	background-color: rgba(0, 0, 0, 0);
+	border-width: 1px;         /* Толщина (px, em, thin, medium, thick) */
+  border-style: solid;       /* Стиль (solid, dashed, dotted, double и др.) */
+  border-color: #929292; 
 	margin-top: 12px;
+
 }
 
 
@@ -670,19 +674,6 @@ a:not(.logo-link):focus:after {
 
 	[class^="works__item"] {
 		flex-basis: 47%;
-	}
-
-	.works__tag {
-		display: inline-block;
-		padding: 5px 10px;
-		border-radius: 50px;
-		text-align: center;
-		font-family: Inter;
-		font-weight: 400;
-		font-size: 14px;
-		color: #2e2e2e;
-		background-color: rgb(221, 221, 221);
-		margin-top: 12px;
 	}
 }
 
@@ -708,17 +699,9 @@ a:not(.logo-link):focus:after {
 	}
 
 	.works__tag {
-		display: inline-block;
-		padding: 5px 10px;
-		border-radius: 50px;
-		text-align: center;
-		font-family: Inter;
-		font-weight: 400;
 		font-size: 12px;
-		color: #2e2e2e;
-		background-color: rgb(221, 221, 221);
-		margin-top: 12px;
 	}
+
 
 }
 
@@ -1347,18 +1330,6 @@ body {
 		flex-basis: 47%;
 	}
 
-	.works__tag {
-		display: inline-block;
-		padding: 5px 10px;
-		border-radius: 50px;
-		text-align: center;
-		font-family: Inter;
-		font-weight: 400;
-		font-size: 14px;
-		color: #2e2e2e;
-		background-color: rgb(221, 221, 221);
-		margin-top: 12px;
-	}
 }
 
 
@@ -1376,16 +1347,7 @@ body {
 	}
 
 	.works__tag {
-		display: inline-block;
-		padding: 5px 10px;
-		border-radius: 50px;
-		text-align: center;
-		font-family: Inter;
-		font-weight: 400;
 		font-size: 12px;
-		color: #2e2e2e;
-		background-color: rgb(221, 221, 221);
-		margin-top: 12px;
 	}
 
 }
