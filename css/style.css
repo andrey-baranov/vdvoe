@@ -63,6 +63,36 @@ button::-moz-focus-inner {
 	padding: 0;
 	border: 0;
 }
+.button-wrapper {
+	padding-left: 33%;	
+	padding-top: 60px;
+}
+.button {
+	display: inline-block;
+	width: 100%;
+	padding: 20px 10px;
+	border-radius: 50px;
+	text-align: center;
+	font-family: Inter;
+	font-weight: 400;
+	font-size: 20px;
+	color: #ffffff;
+	background-color: #0E48DD;	
+}
+
+@media (max-width: 760px) {
+.button-wrapper {
+	padding-left: 0%;		
+}
+}
+	
+.button:hover {
+	color: #ffffff;
+	background-color: #000000;
+}
+
+
+
 
 a,
 a:visited {
@@ -153,7 +183,7 @@ p {
 	font-weight: 300;
 }
 
-a:not(.logo-link) {
+a:not(.logo-link):not(.button) {
 	position: relative;
 	cursor: pointer;
 	line-height: 1.5;
@@ -163,7 +193,7 @@ a:not(.logo-link) {
 
 }
 
-a:not(.logo-link):after {
+a:not(.logo-link):not(.button):after {
 	display: block;
 	position: absolute;
 	left: 0;
@@ -179,8 +209,8 @@ a:not(.logo-link):after {
 	/*задаём время анимации*/
 }
 
-a:not(.logo-link):hover:after,
-a:not(.logo-link):focus:after {
+a:not(.logo-link):not(.button):hover:after,
+a:not(.logo-link):not(.button):focus:after {
 	width: 100%;
 	/*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
 }
@@ -483,7 +513,7 @@ a:not(.logo-link):focus:after {
 
 	.description__text {
 		font-family: Inter;
-		font-size: 20px;
+		font-size: 22px;
 		font-style: normal;
 		font-weight: 400;
 		line-height: 140%;
@@ -552,6 +582,7 @@ a:not(.logo-link):focus:after {
 	.services__video {
 		flex-basis: 47%;
 	}
+
 }
 
 
@@ -631,15 +662,15 @@ a:not(.logo-link):focus:after {
 }
 
 .works__item8 {
-	flex-basis: 40%;
+	flex-basis: 30%;
 }
 
 .works__item9 {
-	flex-basis: 27%;
+	flex-basis: 41%;
 }
 
 .works__item10 {
-	flex-basis: 27%;
+	flex-basis: 23%;
 }
 
 .works__tag {
@@ -714,17 +745,32 @@ a:not(.logo-link):focus:after {
 .line {}
 
 .about__content {
+	display: flex;
 	padding-left: 33%;
-	margin-bottom: 40px;
+	gap: 30px;
+	row-gap: 40px;
+	flex-wrap: wrap;
 }
 
 .about__description {
+	flex-basis: 100%;
 	margin-bottom: 14px;
+}
+
+.about__items {
+	display: flex;
+	gap: 30px;
+	row-gap: 60px;
+	flex-wrap: wrap;
+}
+
+.about__item {
+	flex-basis: 47%;
 }
 
 .clients__description {
 	margin-top: 60px;
-	margin-bottom: -30px;
+	margin-bottom: 20px;
 }
 
 @media (max-width: 760px) {
@@ -742,6 +788,17 @@ a:not(.logo-link):focus:after {
 	.about__description {
 		margin-bottom: 14px;
 	}
+.about__items {
+	display: flex;
+		padding-left: 0%;
+		flex-wrap: wrap;
+		gap: 5%;
+		row-gap: 60px;
+}
+
+.about__item {
+	flex-basis: 47%;
+}
 
 	.clients__description {
 		margin-top: 60px;
@@ -753,10 +810,26 @@ a:not(.logo-link):focus:after {
 	.about {
 		margin-bottom: 80px;
 	}
+	.about__items {
+	display: flex;
+		padding-left: 0%;
+		gap: 30px;
+		row-gap: 40px;
+		flex-wrap: wrap;
+		margin-bottom: -40px;
+}
+
+.about__item {
+	flex-basis: 100%;
+}
 }
 
 
 /*Строка*/
+
+.ticker__wrapper {
+	margin-top: 30px;
+}
 
 @keyframes ticker {
 	0% {
@@ -774,7 +847,7 @@ a:not(.logo-link):focus:after {
 	font-family: inter;
 	font-size: 60px;
 	max-width: 100%;
-	overflow: hidden;
+	overflow: hidden;	
 	margin-bottom: -30px;
 }
 
