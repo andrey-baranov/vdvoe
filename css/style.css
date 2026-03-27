@@ -445,14 +445,14 @@ a:not(.logo-link):focus:after {
 
 	h3 {
 		font-family: bounded;
-		font-size: 20px;
+		font-size: 24px;
 		color: #000000;
 		margin-bottom: 8px;
 	}
 
 	h4 {
 		font-family: bounded;
-		font-size: 20px;
+		font-size: 24px;
 		color: #000000;
 		margin-top: 20px;
 		line-height: 140%;
@@ -460,7 +460,7 @@ a:not(.logo-link):focus:after {
 
 	p {
 		font-family: inter;
-		font-size: 16px;
+		font-size: 18px;
 		line-height: 140%;
 		font-weight: 300;
 	}
