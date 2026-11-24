@@ -183,7 +183,7 @@ p {
 	font-weight: 300;
 }
 
-a:not(.logo-link):not(.button) {
+a:not(.logo-link):not(.button):not(.project__link) {
 	position: relative;
 	cursor: pointer;
 	line-height: 1.5;
@@ -193,7 +193,7 @@ a:not(.logo-link):not(.button) {
 
 }
 
-a:not(.logo-link):not(.button):after {
+a:not(.logo-link):not(.button):not(.project__link):after {
 	display: block;
 	position: absolute;
 	left: 0;
@@ -209,8 +209,8 @@ a:not(.logo-link):not(.button):after {
 	/*задаём время анимации*/
 }
 
-a:not(.logo-link):not(.button):hover:after,
-a:not(.logo-link):not(.button):focus:after {
+a:not(.logo-link):not(.button):not(.project__link):hover:after,
+a:not(.logo-link):not(.button):not(.project__link):focus:after {
 	width: 100%;
 	/*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
 }
@@ -662,15 +662,15 @@ a:not(.logo-link):not(.button):focus:after {
 }
 
 .works__item8 {
-	flex-basis: 30%;
+	flex-basis: 31.3%;
 }
 
 .works__item9 {
-	flex-basis: 41%;
+	flex-basis: 31.3%;
 }
 
 .works__item10 {
-	flex-basis: 23%;
+	flex-basis: 31.3%;
 }
 
 .works__tag {
@@ -1383,7 +1383,11 @@ body {
 .works__card {
 	flex-basis: 31.33%;
 }
-
+.project__link {
+	flex-basis: 31.33%;	
+	text-decoration: none;
+	color: inherit;
+}
 
 
 
